@@ -1,6 +1,6 @@
 function activeList() {
-  const listaAnimais = document.querySelectorAll(".js-listaAnimais li")
-  const listaDescricao = document.querySelectorAll(".js-listaDescricao section");
+  const listaAnimais = document.querySelectorAll("[data-tab='menu'] li")
+  const listaDescricao = document.querySelectorAll("[data-tab='listaDescricao'] section");
 
   if (listaAnimais.length && listaDescricao.length) {
     listaDescricao[0].classList.add("ativo");
@@ -9,8 +9,8 @@ function activeList() {
       listaDescricao.forEach((item) => {
         item.classList.remove("ativo");
       });
-
-      listaDescricao[index].classList.add("ativo");
+      
+      listaDescricao[index].classList.add("ativo", listaDescricao[index].dataset.anime);
     }
 
     listaAnimais.forEach((item, index) => {
@@ -25,7 +25,7 @@ activeList();
 
 
 function activeFaq() {
-  const listaFaq = document.querySelectorAll(".js-faq dt")
+  const listaFaq = document.querySelectorAll("[data-anime='accordion'] dt")
   const activeClass = "ativo";
 
   if (listaFaq.length) {
@@ -46,7 +46,7 @@ function activeFaq() {
 activeFaq();
 
 function scroll() {
-  const internalLink = document.querySelectorAll("a[href^='#']");
+  const internalLink = document.querySelectorAll("[data-menu='suave'] a[href^='#']");
 
   if (internalLink.length) {
     function scrollToSection(event) {
@@ -71,7 +71,7 @@ function scroll() {
 scroll();
 
 function sectionNavigation() {
-  const section = document.querySelectorAll(".js-scroll");
+  const section = document.querySelectorAll("[data-anime='scroll']");
 
   if (section.length) {
     function animaScroll() {

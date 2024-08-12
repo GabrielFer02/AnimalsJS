@@ -2,7 +2,15 @@ html.changingFontSize {
   font-size: 120%;
 }
 
-body, h1, h2, ul, li, dl, dt, dd, p {
+body,
+h1,
+h2,
+ul,
+li,
+dl,
+dt,
+dd,
+p {
   margin: 0;
   padding: 0;
 }
@@ -120,32 +128,39 @@ body {
   background-color: #FAF6ED;
 }
 
-.animais-descricao {
+[data-tab="listaDescricao"] {
   grid-column: 3;
 }
 
-.js .animais-descricao section {
+.js [data-tab="listaDescricao"] section {
   display: none;
 }
 
-.animais-descricao section {
+[data-tab="listaDescricao"] section {
   margin-bottom: 3rem;
 }
 
-.js .animais-descricao section.ativo {
+[data-tab="listaDescricao"] section.ativo {
   display: grid;
-  animation: left 0.5s;
+}
+
+[data-tab="listaDescricao"] section.ativo.show-right {
+  animation: show-right 0.5s;
+}
+
+[data-tab="listaDescricao"] section.ativo.show-down {
+  animation: show-down 0.5s;
 }
 
 .faq-lista {
   grid-column: 2/4;
 }
 
-.js .faq-lista dt {
+.js [data-anime="accordion"] dt {
   cursor: pointer;
 }
 
-.faq-lista dt{
+[data-anime="accordion"] dt {
   font-family: "JetBrains Mono";
   font-weight: bold;
   margin-top: 2rem;
@@ -153,7 +168,7 @@ body {
   color: #E54;
 }
 
-.faq-lista dt::before {
+[data-anime="accordion"] dt::before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -162,25 +177,25 @@ body {
   background-color: #FB5;
 }
 
-.faq-lista dt::after {
+[data-anime="accordion"] dt::after {
   content: "⤵";
   margin-left: 10px;
 }
 
-.faq-lista dt.ativo::after {
+[data-anime="accordion"] dt.ativo::after {
   content: "⤴";
 }
 
-.js .faq-lista dd {
+.js [data-anime="accordion"] dd {
   display: none;
 }
 
-.faq-lista dd.ativo {
+[data-anime="accordion"] dd.ativo {
   display: block;
   animation: slideDown 0.5s;
 }
 
-.faq-lista dd {
+[data-anime="accordion"] dd {
   font-family: Helvetica, Arial;
   margin-bottom: 0.5rem;
   margin-left: 30px;
@@ -225,7 +240,9 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .menu, .grid-section, .copy {
+  .menu,
+  .grid-section,
+  .copy {
     grid-column: 1;
   }
 
@@ -238,7 +255,9 @@ body {
     grid-column: 1;
   }
 
-  .faq-lista, .dados, .mapa {
+  .faq-lista,
+  .dados,
+  .mapa {
     grid-column: 1/-1;
   }
 
@@ -255,21 +274,33 @@ body {
   }
 }
 
-.js .js-scroll {
+.js [data-anime="scroll"] {
   opacity: 0;
-  transition: 0.5s;
   transform: translate3d(-30px, 0, 0);
+  transition: 0.5s;
 }
 
-.js-scroll.ativo {
+[data-anime="scroll"].ativo {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
 
-@keyframes left {
+@keyframes show-right {
   from {
     opacity: 0;
     transform: translate3d(-30px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
   }
 
   to {

@@ -7,8 +7,8 @@
   <meta name="description" content="Animais Fantásticos">
   <title>Sitejs</title>
 
-  <link rel="preload" href="./style/styleclean.css" as="style">
-  <link rel="stylesheet" href="./style/styleclean.css">
+  <link rel="preload" href="./style/style.css" as="style">
+  <link rel="stylesheet" href="./style/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <nav class="menu">
+  <nav class="menu" data-menu="suave">
     <ul>
       <li><a href="#animais">Animais</a></li>
       <li><a href="#faq">Faq</a></li>
@@ -27,9 +27,9 @@
       <li><a href="./">Dev →</a></li>
     </ul>
   </nav>
-  <section class="grid-section animais js-scroll" id="animais" aria-labelledby="animais-info">
+  <section class="grid-section animais" id="animais" data-anime="scroll" aria-labelledby="animais-info">
     <h1 class="titulo" id="animais-info">Animais Fantásticos</h1>
-    <ul class="animais-lista js-listaAnimais">
+    <ul class="animais-lista" data-tab="menu">
       <li><img src="./img/image1.jpg" alt="imagem 1"></li>
       <li><img src="./img/image2.jpg" alt="imagem 2"></li>
       <li><img src="./img/image3.jpg" alt="imagem 3"></li>
@@ -37,43 +37,43 @@
       <li><img src="./img/image5.jpg" alt="imagem 5"></li>
       <li><img src="./img/image6.jpg" alt="imagem 6"></li>
     </ul>
-    <div class="animais-descricao js-listaDescricao">
-      <section aria-labelledby="lobo">
+    <div class="animais-descricao" data-tab="listaDescricao">
+      <section data-anime="show-right" aria-labelledby="lobo">
         <h2 id="lobo">Lobo-Guará</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, debitis impedit eos obcaecati doloribus molestiae ex earum accusantium asperiores labore modi. Repellendus nam accusantium reiciendis tempore explicabo nobis porro molestiae!</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat ducimus aspernatur ipsa animi esse quo rerum minus accusantium tenetur maiores velit neque, harum obcaecati necessitatibus ipsum at molestias et doloribus.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores suscipit veritatis iusto quod?</p>
       </section>
 
-      <section aria-labelledby="macaco">
+      <section data-anime="show-right" aria-labelledby="macaco">
         <h2 id="macaco">Macaco</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, debitis impedit eos obcaecati doloribus molestiae ex earum accusantium asperiores labore modi. Repellendus nam accusantium reiciendis tempore explicabo nobis porro molestiae!</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat ducimus aspernatur ipsa animi esse quo rerum minus accusantium tenetur maiores velit neque, harum obcaecati necessitatibus ipsum at molestias et doloribus.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores suscipit veritatis iusto quod?</p>
       </section>
 
-      <section aria-labelledby="preguica">
+      <section data-anime="show-right" aria-labelledby="preguica">
         <h2 id="preguica">Bixo-preguiça</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, debitis impedit eos obcaecati doloribus molestiae ex earum accusantium asperiores labore modi. Repellendus nam accusantium reiciendis tempore explicabo nobis porro molestiae!</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat ducimus aspernatur ipsa animi esse quo rerum minus accusantium tenetur maiores velit neque, harum obcaecati necessitatibus ipsum at molestias et doloribus.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores suscipit veritatis iusto quod?</p>
       </section>
 
-      <section aria-labelledby="tucano">
+      <section data-anime="show-down" aria-labelledby="tucano">
         <h2 id="tucano">Tucano</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, debitis impedit eos obcaecati doloribus molestiae ex earum accusantium asperiores labore modi. Repellendus nam accusantium reiciendis tempore explicabo nobis porro molestiae!</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat ducimus aspernatur ipsa animi esse quo rerum minus accusantium tenetur maiores velit neque, harum obcaecati necessitatibus ipsum at molestias et doloribus.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores suscipit veritatis iusto quod?</p>
       </section>
 
-      <section aria-labelledby="loris">
+      <section data-anime="show-down" aria-labelledby="loris">
         <h2 id="loris">Lóris</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, debitis impedit eos obcaecati doloribus molestiae ex earum accusantium asperiores labore modi. Repellendus nam accusantium reiciendis tempore explicabo nobis porro molestiae!</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat ducimus aspernatur ipsa animi esse quo rerum minus accusantium tenetur maiores velit neque, harum obcaecati necessitatibus ipsum at molestias et doloribus.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores suscipit veritatis iusto quod?</p>
       </section>
 
-      <section aria-labelledby="raposa">
+      <section data-anime="show-down" aria-labelledby="raposa">
         <h2 id="raposa">Raposa o Ártico</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, debitis impedit eos obcaecati doloribus molestiae ex earum accusantium asperiores labore modi. Repellendus nam accusantium reiciendis tempore explicabo nobis porro molestiae!</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat ducimus aspernatur ipsa animi esse quo rerum minus accusantium tenetur maiores velit neque, harum obcaecati necessitatibus ipsum at molestias et doloribus.</p>
@@ -81,9 +81,9 @@
       </section>
     </div>
   </section>
-  <section class="grid-section faq js-faq js-scroll" id="faq" aria-label="dúvidas frequentes">
+  <section class="grid-section faq js-faq" data-anime="scroll" id="faq" aria-label="dúvidas frequentes">
     <h1 class="titulo">Faq</h1>
-    <dl class="faq-lista">
+    <dl class="faq-lista" data-anime="accordion">
       <dt>Lorem ipsum dolor, sit amet consectetur adipisicing elit?</dt>
       <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui similique sapiente incidunt enim! Quidem enim laborum perspiciatis, molestias sunt modi minus? Quis quibusdam obcaecati, eaque labore iste illo laboriosam doloremque.</dd>
       <dt>Lorem ipsum dolor, sit amet consectetur adipisicing.</dt>
@@ -94,7 +94,7 @@
       <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi temporibus eaque magnam fugit maiores laboriosam ad officiis sequi earum aperiam obcaecati aliquam qui placeat nisi commodi saepe non voluptates, vero sed modi? Tempora ut sed quam in saepe expedita harum beatae sunt, ab similique mollitia perferendis incidunt accusantium. Quis magni repellat dignissimos assumenda odit magnam cum?</dd>
     </dl>
   </section>
-  <section class="grid-section contato js-scroll" id="contato" aria-labelledby="Contatos">
+  <section class="grid-section contato" data-anime="scroll" id="contato" aria-labelledby="Contatos">
     <h1 id="Contatos" class="titulo">Contato</h1>
     <div class="mapa"><img src="./img/sp.jpg" alt="mapa"></div>
     <ul class="dados">
