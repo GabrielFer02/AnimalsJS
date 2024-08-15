@@ -25,7 +25,7 @@
         <li><a href="#animais">Animais</a></li>
         <li><a href="#faq">Faq</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a data-modal="abrir" href="./login.html">Login →</a></li>
+        <li><a data-modal="open" href="./login.html">Login →</a></li>
       </ul>
     </nav>
     <section class="grid-section animais" id="animais" data-anime="scroll" aria-labelledby="animais-info">
@@ -97,7 +97,9 @@
     </section>
     <section class="grid-section contato" data-anime="scroll" id="contato" aria-labelledby="Contatos">
       <h1 id="Contatos" class="titulo">Contato</h1>
-      <div class="mapa"><img src="./img/sp.jpg" alt="mapa"></div>
+      <div class="mapa" aria-label="Endereço próximo ao estacionamento" data-tooltip>
+        <img src="./img/sp.jpg" alt="mapa">
+      </div>
       <ul class="dados">
         <li><a href="mailto:contato@gmail.com">contato@gmail.com</a></li>
         <li><a href="tel:+55(88)999999999">+55 (88) 9-9999-9999</a></li>
@@ -110,7 +112,7 @@
     </footer>
   </div>
 
-  <section class="modal-container ativo" data-modal="container">
+  <section class="modal-container" data-modal="container">
     <div class="modal">
       <button data-modal="close" class="close">X</button>
       <form action="#">
