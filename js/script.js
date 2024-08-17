@@ -12,3 +12,4 @@ activeFaq();
 activeList();
 initModal();
 actionTooltip();
+dropDownMenuAction();

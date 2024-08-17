@@ -1,12 +1,12 @@
+import clickOut from "./clickout.js";
+
 export default function dropDownMenuAction() {
-
-}
-
-const menuList = document.querySelectorAll("[data-dropdown]");
+  const menuList = document.querySelectorAll("[data-dropdown]");
 
 function handleClick(event) {
   event.preventDefault();
-  this.classList.toggle("active");
+  this.classList.add("active");
+  clickOut(this);
 }
 
 const actions = ["click", "touchstart"];
@@ -15,3 +15,5 @@ menuList.forEach((menu) => {
     menu.addEventListener(action, handleClick);
   })
 })
+}
+
