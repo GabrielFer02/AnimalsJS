@@ -1,19 +1,18 @@
-export default function clickOut(element) {
+export default function clickOut(element, events) {
   const html = document.documentElement;
   const attribute = "data-event";
-  const actions = ["click", "touchstart"];
-  
+
   if (!element.hasAttribute(attribute)) {
-    actions.forEach((action) => {
-      html.addEventListener(action, verifyClickOut);
+    events.forEach((actionEvent) => {
+      html.addEventListener(actionEvent, verifyClickOut);
     })
     element.setAttribute(attribute, "");
   }
 
   function verifyClickOut(event) {
     if (!element.contains(event.target)) {
-      actions.forEach((action) => {
-        html.removeEventListener(action, verifyClickOut);
+      events.forEach((actionEvent) => {
+        html.removeEventListener(actionEvent, verifyClickOut);
       })
       element.removeAttribute(attribute);
       element.classList.remove("active");
