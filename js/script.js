@@ -5,6 +5,7 @@ import activeList from "./modules/list-animation.js";
 import initModal from "./modules/modal.js";
 import actionTooltip from "./modules/tooltip.js";
 import dropDownMenuAction from "./modules/dropdown-menu.js";
+import initMenuMobile from "./modules/menu-mobile.js";
 
 scroll();
 sectionNavigation();
@@ -13,3 +14,4 @@ activeList();
 initModal();
 actionTooltip();
 dropDownMenuAction();
+initMenuMobile();

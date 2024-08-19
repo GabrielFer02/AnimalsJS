@@ -1,10 +1,12 @@
-export default function clickOut(element, events) {
+export default function clickOut(element, events, callback) {
   const html = document.documentElement;
   const attribute = "data-event";
 
   if (!element.hasAttribute(attribute)) {
     events.forEach((actionEvent) => {
-      html.addEventListener(actionEvent, verifyClickOut);
+      setTimeout(() => {
+        html.addEventListener(actionEvent, verifyClickOut);
+      })
     })
     element.setAttribute(attribute, "");
   }
@@ -15,7 +17,7 @@ export default function clickOut(element, events) {
         html.removeEventListener(actionEvent, verifyClickOut);
       })
       element.removeAttribute(attribute);
-      element.classList.remove("active");
+      callback();
     }
   }
 }
