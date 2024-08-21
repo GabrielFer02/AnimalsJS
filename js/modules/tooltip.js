@@ -29,19 +29,18 @@ export default function actionTooltip() {
         this.tooltipBox.remove();
         this.element.removeEventListener("mouseleave", mouseLeave);
         this.element.removeEventListener("mousemove", mouseMove);
-      }
-    }
+      },
+    };
 
     const mouseMove = {
       handleEvent(event) {
         this.tooltipBox.style.top = event.pageY + 2 + "px";
         this.tooltipBox.style.left = event.pageX + 2 + "px";
-      }
-    }
+      },
+    };
 
     tooltips.forEach((item) => {
       item.addEventListener("mouseover", moveOnMouse);
-    })
+    });
   }
 }
-

@@ -1,7 +1,7 @@
 export default function initModal() {
   const buttomOpen = document.querySelector("[data-modal='open']");
   const buttomClose = document.querySelector("[data-modal='close']");
-  const containerModal = document.querySelector("[data-modal='container']")
+  const containerModal = document.querySelector("[data-modal='container']");
 
   if (buttomOpen && buttomClose && containerModal) {
     function actionModal(event) {
@@ -21,5 +21,3 @@ export default function initModal() {
     containerModal.addEventListener("click", clickOutModal);
   }
 }
-
-

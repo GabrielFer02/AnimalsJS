@@ -15,8 +15,8 @@ export default function initAnimationNumbers() {
             number.innerText = value;
             clearInterval(timer);
           }
-        }, 10)
-      })
+        }, 10);
+      });
     }
   }
 
@@ -31,4 +31,3 @@ export default function initAnimationNumbers() {
 
   mutation.observe(section, { attributes: true });
 }
-

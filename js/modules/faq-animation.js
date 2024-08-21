@@ -1,5 +1,5 @@
 export default function activeFaq() {
-  const listaFaq = document.querySelectorAll("[data-anime='accordion'] dt")
+  const listaFaq = document.querySelectorAll("[data-anime='accordion'] dt");
   const activeClass = "ativo";
 
   if (listaFaq.length) {

@@ -4,7 +4,7 @@ export default function sectionNavigation() {
   if (section.length) {
     function animaScroll() {
       section.forEach((item) => {
-        if ((item.getBoundingClientRect().top - (window.innerHeight * 0.6)) < 0) {
+        if (item.getBoundingClientRect().top - window.innerHeight * 0.6 < 0) {
           if (!item.classList.contains("ativo")) {
             item.classList.add("ativo");
           }
@@ -14,6 +14,6 @@ export default function sectionNavigation() {
 
     animaScroll();
 
-    window.addEventListener("scroll", animaScroll)
+    window.addEventListener("scroll", animaScroll);
   }
 }

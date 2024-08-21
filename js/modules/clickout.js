@@ -6,8 +6,8 @@ export default function clickOut(element, events, callback) {
     events.forEach((actionEvent) => {
       setTimeout(() => {
         html.addEventListener(actionEvent, verifyClickOut);
-      })
-    })
+      });
+    });
     element.setAttribute(attribute, "");
   }
 
@@ -15,7 +15,7 @@ export default function clickOut(element, events, callback) {
     if (!element.contains(event.target)) {
       events.forEach((actionEvent) => {
         html.removeEventListener(actionEvent, verifyClickOut);
-      })
+      });
       element.removeAttribute(attribute);
       callback();
     }

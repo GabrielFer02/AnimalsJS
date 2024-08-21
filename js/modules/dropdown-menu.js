@@ -16,8 +16,7 @@ export default function dropDownMenuAction() {
     menuList.forEach((menu) => {
       events.forEach((actionEvent) => {
         menu.addEventListener(actionEvent, handleClick);
-      })
-    })
+      });
+    });
   }
 }
-
