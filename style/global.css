@@ -155,6 +155,11 @@ body {
   grid-column: 2/4;
 }
 
+.faq-lista dt {
+  font-family: "IBM Plex Mono";
+  font-weight: bold;
+}
+
 .js [data-anime="accordion"] dt {
   cursor: pointer;
 }
