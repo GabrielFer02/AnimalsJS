@@ -8,6 +8,7 @@ import dropDownMenuAction from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initOperationSchedule from "./modules/operating-schedule.js";
 import initAnimalsFetch from "./modules/animals-fetch.js";
+import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 scroll();
 sectionNavigation();
@@ -19,3 +20,4 @@ dropDownMenuAction();
 initMenuMobile();
 initOperationSchedule();
 initAnimalsFetch();
+initFetchBitcoin();
