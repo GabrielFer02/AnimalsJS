@@ -9,7 +9,7 @@ export default function initAnimationNumbers() {
 
         let count = 0;
         const timer = setInterval(() => {
-          count = count + increment;
+          count += increment;
           number.innerText = count;
           if (count > value) {
             number.innerText = value;
@@ -20,14 +20,16 @@ export default function initAnimationNumbers() {
     }
   }
 
+  let mutation;
   function mutationAction(mutationEvent) {
     if (mutationEvent[0].target.classList.contains("ativo")) {
+      mutation.disconnect();
       animationNumbers();
     }
   }
+  mutation = new MutationObserver(mutationAction);
 
   const section = document.querySelector("section.numeros");
-  const mutation = new MutationObserver(mutationAction);
 
   mutation.observe(section, { attributes: true });
 }

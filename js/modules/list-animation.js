@@ -4,19 +4,19 @@ export default function activeList() {
     "[data-tab='listaDescricao'] section"
   );
 
+  function ativaDescricao(index) {
+    listaDescricao.forEach((item) => {
+      item.classList.remove("ativo");
+    });
+
+    listaDescricao[index].classList.add(
+      "ativo",
+      listaDescricao[index].dataset.anime
+    );
+  }
+
   if (listaAnimais.length && listaDescricao.length) {
     listaDescricao[0].classList.add("ativo");
-
-    function ativaDescricao(index) {
-      listaDescricao.forEach((item) => {
-        item.classList.remove("ativo");
-      });
-
-      listaDescricao[index].classList.add(
-        "ativo",
-        listaDescricao[index].dataset.anime
-      );
-    }
 
     listaAnimais.forEach((item, index) => {
       item.addEventListener("click", () => {

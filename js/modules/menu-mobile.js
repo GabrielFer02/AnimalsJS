@@ -6,16 +6,16 @@ export default function initMenuMobile() {
   const events = ["click", "touchstart"];
   const className = "active";
 
-  if (menuButtom) {
-    function openMenu() {
-      menuButtom.classList.add(className);
-      menuList.classList.add(className);
-      clickOut(menuList, events, () => {
-        menuList.classList.remove(className);
-        menuButtom.classList.remove(className);
-      });
-    }
+  function openMenu() {
+    menuButtom.classList.add(className);
+    menuList.classList.add(className);
+    clickOut(menuList, events, () => {
+      menuList.classList.remove(className);
+      menuButtom.classList.remove(className);
+    });
+  }
 
+  if (menuButtom) {
     events.forEach((actionEvent) => {
       menuButtom.addEventListener(actionEvent, openMenu);
     });

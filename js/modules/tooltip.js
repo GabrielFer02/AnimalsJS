@@ -11,18 +11,12 @@ export default function actionTooltip() {
       return tooltipBox;
     }
 
-    function moveOnMouse(event) {
-      const tooltipBox = createTooltip(this);
-      tooltipBox.style.top = event.pageY + "px";
-      tooltipBox.style.left = event.pageX + "px";
-
-      mouseLeave.tooltipBox = tooltipBox;
-      mouseLeave.element = this;
-      this.addEventListener("mouseleave", mouseLeave);
-
-      mouseMove.tooltipBox = tooltipBox;
-      this.addEventListener("mousemove", mouseMove);
-    }
+    const mouseMove = {
+      handleEvent(event) {
+        this.tooltipBox.style.top = `${event.pageY + 10}px`;
+        this.tooltipBox.style.left = `${event.pageX + 10}px`;
+      },
+    };
 
     const mouseLeave = {
       handleEvent() {
@@ -32,12 +26,18 @@ export default function actionTooltip() {
       },
     };
 
-    const mouseMove = {
-      handleEvent(event) {
-        this.tooltipBox.style.top = event.pageY + 2 + "px";
-        this.tooltipBox.style.left = event.pageX + 2 + "px";
-      },
-    };
+    function moveOnMouse(event) {
+      const tooltipBox = createTooltip(this);
+      tooltipBox.style.top = event.pageY + "px";
+      tooltipBox.style.left = event.pageX + "px";
+
+      mouseMove.tooltipBox = tooltipBox;
+      this.addEventListener("mousemove", mouseMove);
+
+      mouseLeave.tooltipBox = tooltipBox;
+      mouseLeave.element = this;
+      this.addEventListener("mouseleave", mouseLeave);
+    }
 
     tooltips.forEach((item) => {
       item.addEventListener("mouseover", moveOnMouse);

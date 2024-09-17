@@ -1,6 +1,16 @@
 import initAnimationNumbers from "./animation-numbers.js";
 
 export default function initAnimalsFetch() {
+  function createAnimalRegion(animal) {
+    const animalDiv = document.createElement("div");
+
+    animalDiv.classList.add("numeros-animal");
+    animalDiv.innerHTML = `<h3>${animal.animal}</h3>
+    <span data-number>${animal.number}</span>`;
+
+    return animalDiv;
+  }
+
   async function fetchAnimalsInfo(url) {
     try {
       const response = await fetch(url);
@@ -14,16 +24,6 @@ export default function initAnimalsFetch() {
     } catch (erro) {
       console.log(erro);
     }
-  }
-
-  function createAnimalRegion(animal) {
-    const animalDiv = document.createElement("div");
-
-    animalDiv.classList.add("numeros-animal");
-    animalDiv.innerHTML = `<h3>${animal.animal}</h3>
-    <span data-number>${animal.number}</span>`;
-
-    return animalDiv;
   }
 
   fetchAnimalsInfo("../../animalsapi.json");
